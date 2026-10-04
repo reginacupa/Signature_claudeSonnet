@@ -4,8 +4,8 @@
  * Formato: apenas dígitos com DDI+DDD, ex.: '55XXXXXXXXXXX'.
  */
 export const contact = {
-  whatsappNumber: '', // PENDENTE — dado definitivo ainda não fornecido
-  whatsappMessage: 'Olá! Quero contar sobre o meu projeto.', // PROVISÓRIO
+  whatsappNumber: '+5547984653443', 
+  whatsappMessage: 'Olá! Quero contar sobre o meu projeto.', 
   email: 'reginacupa@gmail.com',
   domain: 'signature.tec.br',
 };
