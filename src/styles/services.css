@@ -1,0 +1,108 @@
+/* 04 O QUE FAZEMOS — escada tipográfica */
+.services {
+  padding: var(--space-section) var(--margin);
+}
+.services__intro {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 1.75rem;
+  margin-bottom: clamp(5rem, 14vw, 12rem);
+}
+.services__title {
+  grid-column: 1 / -1;
+  font-weight: 300;
+  font-size: var(--fs-display);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  max-width: 11ch;
+}
+.services__lede {
+  grid-column: 1 / -1;
+  max-width: 34ch;
+  font-size: var(--fs-lead);
+  line-height: 1.4;
+  color: var(--fg-muted);
+}
+@media (--md) {
+  .services__title {
+    grid-column: 1 / span 8;
+  }
+  .services__lede {
+    grid-column: 8 / -1;
+    align-self: end;
+  }
+}
+
+.svc {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding-block: clamp(2rem, 5vw, 4.5rem);
+  border-top: 1px solid var(--hairline-on-light);
+}
+/* linha vinho: ênfase significativa no item ativo */
+.svc::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-wine);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.svc[data-active='true']::before {
+  transform: scaleX(1);
+}
+.svc__index {
+  grid-column: 1 / 2;
+  font-size: var(--fs-micro);
+  letter-spacing: 0.2em;
+  padding-top: 0.6em;
+  color: var(--fg-muted);
+}
+.svc__name {
+  grid-column: 2 / -1;
+  font-weight: 200;
+  font-size: clamp(2.6rem, 1rem + 9.4vw, 10.5rem);
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+  opacity: 0.5;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+.svc[data-active='true'] .svc__name {
+  opacity: 1;
+}
+.svc__text {
+  grid-column: 2 / -1;
+  margin-top: 1.25rem;
+  max-width: 36ch;
+}
+.svc__lead {
+  font-size: var(--fs-lead);
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+.svc__body {
+  color: var(--fg-muted);
+  font-size: var(--fs-body);
+}
+
+@media (--md) {
+  /* degraus: cada linha avança duas colunas */
+  .svc__name {
+    grid-column: calc(2 + var(--n) * 2) / -1;
+  }
+  .svc__text {
+    grid-column: calc(2 + var(--n) * 2) / span 5;
+  }
+}
+@media (--lg) {
+  .svc__text {
+    grid-column: calc(2 + var(--n) * 2) / span 4;
+  }
+}

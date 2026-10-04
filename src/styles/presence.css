@@ -1,0 +1,34 @@
+/* 03 PRESENÇA — respiro. O vazio é o conteúdo. */
+.presence {
+  position: relative;
+  padding: clamp(8rem, 28vh, 18rem) var(--margin) clamp(9rem, 34vh, 22rem);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: clamp(9rem, 38vh, 26rem);
+}
+.presence__a {
+  grid-column: 1 / span 10;
+  max-width: 17ch;
+  font-weight: 300;
+  font-size: clamp(1.3rem, 1rem + 1.6vw, 2.2rem);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+.presence__b {
+  grid-column: 3 / -1;
+  max-width: 14ch;
+  font-weight: 300;
+  font-size: var(--fs-display);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+@media (--md) {
+  .presence__a {
+    grid-column: 2 / span 5;
+  }
+  .presence__b {
+    grid-column: 6 / -1;
+    max-width: 13ch;
+  }
+}

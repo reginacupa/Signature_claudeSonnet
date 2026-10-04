@@ -1,0 +1,99 @@
+/* ── Wordmark: SIGNATURE → SIGNATURe ───────────────────────────── */
+.wm {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  font-family: var(--font-wordmark);
+  font-weight: 400; /* Anta Regular — nunca sintetizar bold */
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wordmark);
+  line-height: 0.9;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+span.wm {
+  cursor: inherit;
+}
+.wm__l {
+  display: inline-block;
+}
+.wm__re {
+  position: relative;
+  display: inline-block; /* largura = "RE": o overlay não altera o layout */
+}
+.wm__caps {
+  display: inline-block;
+  transition: opacity var(--dur-wm-fade) var(--ease-out) 0.12s;
+}
+.wm__script {
+  position: absolute;
+  left: var(--re-x);
+  bottom: var(--re-y);
+  font-family: var(--font-accent);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: calc(1em * var(--re-scale));
+  line-height: 1;
+  color: var(--accent);
+  pointer-events: none;
+  /* escondido: recorte da direita; escrito da esquerda para a direita */
+  clip-path: inset(-40% 100% -40% 0);
+  transition: clip-path var(--dur-wm-hide) var(--ease-inout);
+}
+.wm[data-open='true'] .wm__caps {
+  opacity: 0;
+  transition-delay: 0s;
+}
+.wm[data-open='true'] .wm__script {
+  clip-path: inset(-40% -40% -40% -20%);
+  transition: clip-path var(--dur-wm-write) var(--ease-write);
+}
+@media (--reduce) {
+  .wm__caps,
+  .wm__script,
+  .wm[data-open='true'] .wm__script {
+    transition: none;
+  }
+}
+
+/* Tamanhos */
+.wm--hero {
+  font-size: var(--wm-hero-size);
+}
+.wm--footer {
+  font-size: var(--wm-hero-size);
+}
+.wm--case {
+  font-size: clamp(2.2rem, 9.5vw, 8rem);
+}
+.wm--header {
+  font-size: clamp(0.95rem, 0.8rem + 0.5vw, 1.2rem);
+  --re-scale: 1.7;
+}
+
+/* Entrada: letras sobem uma vez */
+.wm--intro .wm__l,
+.wm--intro .wm__re {
+  animation: wm-in var(--dur-intro) var(--ease-out) both;
+  animation-delay: calc(var(--i) * var(--stagger-intro) + 120ms);
+}
+@keyframes wm-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.14em);
+  }
+}
+@media (--reduce) {
+  .wm--intro .wm__l,
+  .wm--intro .wm__re {
+    animation: none;
+  }
+}

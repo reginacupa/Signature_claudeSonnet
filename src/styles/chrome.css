@@ -1,0 +1,103 @@
+/* ── Header ────────────────────────────────────────────────────── */
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--header-h);
+  padding-inline: var(--margin);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+}
+.header__brand {
+  display: inline-block;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    visibility var(--dur-slow);
+}
+html[data-past-hero='false'] .header[data-variant='landing'] .header__brand {
+  opacity: 0;
+  visibility: hidden;
+}
+.header__nav {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin-left: auto;
+  font-size: var(--fs-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.header__nav a {
+  display: inline-block;
+  padding: 0.6rem 0;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+@media (--hover) {
+  .header__nav a:hover {
+    background-size: 100% 1px;
+  }
+}
+.header__nav a:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+.footer {
+  position: relative;
+  min-height: 100svh;
+  padding: clamp(10rem, 24vh, 16rem) var(--margin) clamp(1.25rem, 3vh, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem 4rem;
+  font-size: var(--fs-small);
+}
+.footer__nav,
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.footer a {
+  display: inline-block;
+  padding: 0.35rem 0;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) left calc(100% - 0.25rem) / 0 1px no-repeat;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+@media (--hover) {
+  .footer a:hover {
+    background-size: 100% 1px;
+  }
+}
+.footer a:focus-visible {
+  background-size: 100% 1px;
+}
+.footer__contact {
+  align-items: flex-start;
+}
+@media (--md) {
+  .footer__contact {
+    align-items: flex-end;
+  }
+}
+.footer__mark {
+  display: block;
+  margin-left: -0.04em;
+}
+.footer__legal {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+}

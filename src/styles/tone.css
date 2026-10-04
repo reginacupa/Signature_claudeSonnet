@@ -1,0 +1,39 @@
+/* Tokens semânticos de foreground. O AmbientEngine alterna data-tone por elemento. */
+:root,
+[data-tone='dark'] {
+  --fg: var(--text-on-dark);
+  --fg-muted: var(--text-muted-on-dark);
+  --accent: var(--accent-on-dark);
+  --hairline: var(--hairline-on-dark);
+  --punct: var(--punct-on-dark);
+}
+[data-tone='light'] {
+  --fg: var(--text-on-light);
+  --fg-muted: var(--text-muted-on-light);
+  --accent: var(--accent-on-light);
+  --hairline: var(--hairline-on-light);
+  --punct: var(--punct-on-light);
+}
+
+/* Sem transição de cor: troca instantânea => nenhum estado intermediário de baixo contraste. */
+.tone {
+  color: var(--fg);
+}
+.punct {
+  color: var(--punct);
+}
+.st-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.st-ch {
+  display: inline;
+}
+
+/* Letra atravessada pela fronteira: gradiente duro definido pelo AmbientEngine */
+[data-tone='split'] {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

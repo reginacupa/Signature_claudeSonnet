@@ -1,0 +1,221 @@
+/* PÁGINA COMERCIAL */
+.c-stage {
+  position: relative;
+  height: calc(100svh + var(--pin-stage));
+}
+.c-stage__pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  padding: var(--header-h) var(--margin) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.c-title {
+  font-weight: 300;
+  font-size: clamp(3rem, 1rem + 13vw, 15rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  margin-left: -0.04em;
+}
+
+.kicker {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--fg-muted);
+}
+
+main section[class^='c-']:not(.c-stage) {
+  padding: clamp(4rem, 9vw, 9rem) var(--margin);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+main section[class^='c-']:not(.c-stage) > .kicker {
+  grid-column: 1 / -1;
+}
+
+/* ofertas: linhas tipográficas */
+.offers {
+  grid-column: 1 / -1;
+}
+.offer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem 2rem;
+  padding-block: clamp(1.75rem, 3.5vw, 3rem);
+  border-top: 1px solid var(--hairline-on-light);
+}
+.offer:last-child {
+  border-bottom: 1px solid var(--hairline-on-light);
+}
+.offer__name {
+  font-weight: 300;
+  font-size: var(--fs-statement);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.offer__price {
+  display: flex;
+  flex-direction: column;
+}
+.offer__pre {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.offer__price strong {
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1rem + 2.2vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.offer__price strong.is-text {
+  font-weight: 300;
+  font-size: var(--fs-lead);
+  letter-spacing: 0;
+}
+.offer__meta {
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+}
+@media (--md) {
+  .offer {
+    grid-template-columns: 5fr 4fr 3fr;
+    align-items: baseline;
+  }
+  .offer__meta {
+    text-align: right;
+  }
+}
+
+/* listas calmas */
+.c-list {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 0.9rem;
+  max-width: 52ch;
+  font-size: var(--fs-body);
+}
+.c-list li {
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--hairline-on-light);
+}
+.c-list--quiet {
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+}
+@media (--md) {
+  .c-split > .c-list,
+  .c-care > .c-list {
+    grid-column: 6 / -1;
+  }
+  .c-flow > .c-list {
+    grid-column: 6 / -1;
+    margin-top: 1.5rem;
+  }
+}
+
+/* fluxo: frase corrida numerada */
+.flow {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 2.2rem;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 1rem + 2.2vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.flow__step {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.flow__n {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+/* pagamento: 50 / 50 */
+.pay {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.pay__part {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hairline-on-light);
+}
+.pay__n {
+  font-weight: 200;
+  font-size: clamp(4rem, 1rem + 14vw, 14rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+.pay__t {
+  max-width: 24ch;
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+}
+@media (--md) {
+  .pay {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter);
+  }
+}
+
+.c-note {
+  grid-column: 1 / -1;
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+  max-width: 56ch;
+}
+.c-note a {
+  color: var(--fg);
+}
+.c-note--legal {
+  font-size: var(--fs-micro);
+}
+
+/* care */
+.care__price {
+  grid-column: 1 / -1;
+  font-weight: 200;
+  font-size: var(--fs-display);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.care__values {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.6rem;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 1rem + 2.4vw, 3.2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* ação final */
+.c-final {
+  min-height: 60svh;
+  align-content: center;
+}
+.c-final__cta {
+  grid-column: 1 / -1;
+}
+.c-final .cta-bracket {
+  font-size: clamp(1.4rem, 1rem + 3.2vw, 3.6rem);
+}

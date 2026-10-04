@@ -1,0 +1,46 @@
+/* 02 PERCEPÇÃO — trecho pinned; a luz sobe através da frase */
+.perception {
+  position: relative;
+  height: calc(100svh + var(--pin-perception));
+}
+.perception__stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  padding: var(--header-h) var(--margin) 0;
+  display: flex;
+  align-items: center;
+}
+.perception__statement {
+  width: 100%;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.perception__l1,
+.perception__l2,
+.perception__l3 {
+  display: block;
+}
+.perception__l1 {
+  font-size: clamp(1.4rem, 0.9rem + 2.9vw, 3.4rem);
+}
+.perception__l2 {
+  margin-top: 0.5em;
+  margin-left: 18vw;
+  font-size: clamp(1.4rem, 0.9rem + 2.9vw, 3.4rem);
+  color: var(--fg-muted);
+}
+.perception__l3 {
+  margin-top: clamp(0.25rem, 1.5vh, 1rem);
+  margin-left: -0.04em;
+  font-weight: 400;
+  font-size: clamp(3rem, 1rem + 16.2vw, 20rem);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+@media (--md) {
+  .perception__l2 {
+    margin-left: 12vw;
+  }
+}

@@ -1,0 +1,126 @@
+/* 05 ASSINATURA */
+.signature {
+  padding: var(--space-section) var(--margin) clamp(8rem, 18vw, 16rem);
+}
+.signature__opening {
+  font-weight: 300;
+  font-size: var(--fs-statement);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  max-width: 18em;
+  margin-bottom: clamp(5rem, 12vw, 11rem);
+}
+.signature__opening br {
+  display: none;
+}
+@media (--md) {
+  .signature__opening br {
+    display: inline;
+  }
+}
+
+/* Case: coluna de meta estreita + palco que sangra à direita */
+.case {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+}
+.case__index {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.case__title {
+  margin-top: 0.8rem;
+  font-weight: 300;
+  font-size: clamp(2.6rem, 1rem + 5.2vw, 5.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.case__type {
+  margin-top: 1rem;
+  font-size: var(--fs-small);
+}
+.case__type span {
+  color: var(--fg-muted);
+}
+.case__list {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  max-width: 34ch;
+  font-size: var(--fs-micro);
+  letter-spacing: 0.04em;
+  color: var(--fg-muted);
+}
+
+.case__stage {
+  position: relative;
+}
+.case__frame {
+  aspect-ratio: 16 / 10;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--hairline-on-light);
+}
+.case__desktop img,
+.case__mobile img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.case__mobile {
+  position: absolute;
+  width: 22%;
+  left: -4%;
+  bottom: -8%;
+}
+
+@media (--lg) {
+  .case {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gutter);
+    align-items: end;
+  }
+  .case > :first-child {
+    grid-column: 1 / span 4;
+    align-self: start;
+    position: sticky;
+    top: 20vh;
+  }
+  .case__stage {
+    grid-column: 5 / -1;
+    margin-right: calc(var(--margin) * -1);
+  }
+  .case__frame {
+    border-right: 0;
+  }
+}
+
+.signature__close {
+  margin-top: clamp(8rem, 20vw, 18rem);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 2.5rem;
+}
+.signature__closing {
+  grid-column: 1 / -1;
+  font-weight: 300;
+  font-size: var(--fs-display);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+.signature__cta {
+  grid-column: 1 / -1;
+}
+@media (--md) {
+  .signature__closing {
+    grid-column: 3 / -1;
+  }
+  .signature__cta {
+    grid-column: 3 / -1;
+  }
+}
