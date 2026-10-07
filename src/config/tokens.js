@@ -35,7 +35,6 @@ export const type = {
   // Gotham Rounded é licenciada: se o arquivo/instalação existir, é usada (local()).
   // Fallback provisório: Nunito (rounded, pesos reais, sem peso sintetizado).
   system: '"Gotham Rounded", "Nunito Variable", "Nunito", system-ui, sans-serif',
-  accent: '"Mr Dafoe", cursive', // somente o "Re"
   trackingWordmark: '0.05em', // LOCKED (5%)
 
   micro: 'clamp(0.72rem, 0.68rem + 0.15vw, 0.82rem)',
@@ -60,9 +59,10 @@ export const space = {
 /* ─── WORDMARK ─────────────────────────────────────────────────── */
 export const wordmark = {
   heroSize: 'min(15.1vw, 34svh)',
-  reScale: 0.98, // tamanho do "Re" Mr Dafoe relativo ao cap-height Anta
-  reX: '-0.02em',
-  reY: '-0.1em',
+  reAsset: '/assets/brand/signature-re.png', // brand asset proprietário. Não substituir por fonte.
+  reScale: 1.2, // altura do PNG em em (CALIBRATE IN BROWSER)
+  reX: '-0.27em',
+  reY: '-0.17em',
 };
 
 /* ─── MOTION — CALIBRATE IN BROWSER ────────────────────────────── */
@@ -131,7 +131,6 @@ export function applyTokens(root = document.documentElement) {
 
   set('--font-wordmark', type.wordmark);
   set('--font-system', type.system);
-  set('--font-accent', type.accent);
   set('--tracking-wordmark', type.trackingWordmark);
   ['micro', 'small', 'body', 'lead', 'statement', 'display', 'mega'].forEach((k) =>
     set(`--fs-${k}`, type[k]),

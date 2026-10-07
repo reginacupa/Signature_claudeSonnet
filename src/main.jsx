@@ -1,5 +1,4 @@
 import '@fontsource/anta/400.css';
-import '@fontsource/mr-dafoe/400.css';
 import '@fontsource-variable/nunito/index.css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';

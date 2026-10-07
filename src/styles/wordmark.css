@@ -36,17 +36,19 @@ span.wm {
   position: absolute;
   left: var(--re-x);
   bottom: var(--re-y);
-  font-family: var(--font-accent);
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: calc(1em * var(--re-scale));
-  line-height: 1;
-  color: var(--accent);
+  height: calc(1em * var(--re-scale));
+  display: block;
   pointer-events: none;
   /* escondido: recorte da direita; escrito da esquerda para a direita */
   clip-path: inset(-40% 100% -40% 0);
   transition: clip-path var(--dur-wm-hide) var(--ease-inout);
+}
+.wm__script img {
+  display: block;
+  height: 100%;
+  width: auto; /* proporção original preservada */
+  max-width: none;
+  user-select: none;
 }
 .wm[data-open='true'] .wm__caps {
   opacity: 0;
@@ -67,16 +69,26 @@ span.wm {
 /* Tamanhos */
 .wm--hero {
   font-size: var(--wm-hero-size);
+  /* Re (asset): +~17% — CALIBRATE IN BROWSER (independente do footer) */
+  --re-scale: 1.4;
+  --re-x: -0.31em;
+  --re-y: -0.23em;
 }
 .wm--footer {
   font-size: var(--wm-hero-size);
+  /* Re (asset): +~17% — CALIBRATE IN BROWSER (independente do hero) */
+  --re-scale: 1.4;
+  --re-x: -0.31em;
+  --re-y: -0.23em;
 }
 .wm--case {
   font-size: clamp(2.2rem, 9.5vw, 8rem);
 }
 .wm--header {
   font-size: clamp(0.95rem, 0.8rem + 0.5vw, 1.2rem);
-  --re-scale: 1.7;
+  --re-scale: 1.55; /* legibilidade em tamanho pequeno — CALIBRATE IN BROWSER */
+  --re-x: -0.33em;
+  --re-y: -0.2em;
 }
 
 /* Entrada: letras sobem uma vez */

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Tone from '../ambient/Tone.jsx';
-import { motion } from '../config/tokens.js';
+import { motion, wordmark } from '../config/tokens.js';
 
 const STEM = [...'SIGNATU'];
 const canHover = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -8,7 +8,7 @@ const canHover = () => window.matchMedia('(hover: hover) and (pointer: fine)').m
 /**
  * SIGNATURE → SIGNATURe  (Master §3, LOCKED)
  *
- * - SIGNATU estável; apenas o "Re" muda (Anta caps → Mr Dafoe, vinho).
+ * - SIGNATU estável; apenas o "Re" muda (Anta caps → asset gráfico proprietário SignatuRe, PNG).
  * - Sem layout shift: a célula tem a largura de "RE"; o "Re" manuscrito é
  *   um overlay absoluto, revelado por clip-path (escrito da esquerda p/ direita).
  * - Desktop: hover/foco. Touch: toque alterna + dica automática única.
@@ -111,7 +111,9 @@ export default function InteractiveWordmark({
         ))}
         <Tone as="span" className="wm__re" style={{ '--i': STEM.length }}>
           <span className="wm__caps">RE</span>
-          <span className="wm__script">Re</span>
+          <span className="wm__script">
+            <img src={wordmark.reAsset} alt="" decoding="async" draggable="false" />
+          </span>
         </Tone>
       </span>
     </Root>
