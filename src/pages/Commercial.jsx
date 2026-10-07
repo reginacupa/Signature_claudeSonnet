@@ -133,9 +133,6 @@ export default function Commercial() {
         {/* ── ação final: WhatsApp ── */}
         <section className="c-final" aria-label="Contato">
           <WhatsAppCTA label="Conte pra gente" className="c-final__cta" />
-          <Tone as="p" className="c-note">
-            WhatsApp · <a href={`mailto:${contact.email}`}>{contact.email}</a>
-          </Tone>
           <Tone as="p" className="c-note c-note--legal">
             {legal}
           </Tone>
