@@ -70,19 +70,20 @@ span.wm {
 .wm--hero {
   font-size: var(--wm-hero-size);
   /* Re (asset): +~17% — CALIBRATE IN BROWSER (independente do footer) */
-  --re-scale: 1.4;
+  --re-scale: 1.60;
   --re-x: -0.31em;
   --re-y: -0.23em;
 }
 .wm--footer {
   font-size: var(--wm-hero-size);
   /* Re (asset): +~17% — CALIBRATE IN BROWSER (independente do hero) */
-  --re-scale: 1.4;
+  --re-scale: 1.60;
   --re-x: -0.31em;
   --re-y: -0.23em;
 }
 .wm--case {
   font-size: clamp(2.2rem, 9.5vw, 8rem);
+  --re-scale: 1.55; /* legibilidade em tamanho grande — CALIBRATE IN BROWSER */
 }
 .wm--header {
   font-size: clamp(0.95rem, 0.8rem + 0.5vw, 1.2rem);

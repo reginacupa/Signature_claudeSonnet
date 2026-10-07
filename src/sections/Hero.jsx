@@ -21,9 +21,7 @@ export default function Hero() {
             <span>{cta.label}</span>
             <span className="link-line__rule" aria-hidden="true" />
           </Link>
-          {SHOW_PROVISIONAL_MARKERS && (
-            <span className="provisional">label provisório · a calibrar</span>
-          )}
+          
         </Tone>
       </div>
 

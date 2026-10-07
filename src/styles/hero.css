@@ -33,10 +33,11 @@
   justify-self: end;
   text-align: right;
   font-size: var(--fs-micro);
-  letter-spacing: 0.3em;
-  line-height: 1.8;
-  color: var(--fg-muted);
+  letter-spacing: 0.22em;
+  line-height: 1.7;
+  color: var(--fg);
   max-width: 24ch;
+  margin-bottom: 1.5rem;
 }
 .hero__mark {
   grid-row: 4;
