@@ -59,7 +59,7 @@ export const space = {
 /* ─── WORDMARK ─────────────────────────────────────────────────── */
 export const wordmark = {
   heroSize: 'min(15.1vw, 34svh)',
-  reAsset: '/assets/brand/signature-re.png', // brand asset proprietário. Não substituir por fonte.
+  reAsset: `${import.meta.env.BASE_URL}assets/brand/signature-re.png`, // brand asset proprietário. Não substituir por fonte.
   reScale: 1.2, // altura do PNG em em (CALIBRATE IN BROWSER)
   reX: '-0.27em',
   reY: '-0.17em',
