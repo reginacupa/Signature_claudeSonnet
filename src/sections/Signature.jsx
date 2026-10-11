@@ -56,7 +56,19 @@ export function CaseStudy({ data }) {
           </>
         ) : (
           <div className="case__frame">
-            <InteractiveWordmark size="case" />
+            {data.image ? (
+              <img
+                className="case__image"
+                src={data.image.src}
+                width={data.image.width}
+                height={data.image.height}
+                alt={data.image.alt}
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <InteractiveWordmark size="case" />
+            )}
           </div>
         )}
       </div>

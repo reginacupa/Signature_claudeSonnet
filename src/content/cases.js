@@ -1,3 +1,5 @@
+import signatureCase from '../assets/signature-case.png';
+
 /**
  * CASES. Somente trabalho real da SignatuRe.
  * Case 01 = a própria SignatuRe (LOCKED). Imagens ainda NÃO existem.
@@ -32,5 +34,11 @@ export const cases = [
       'publicação',
     ],
     media: { desktop: null, mobile: null },
+    image: {
+      src: signatureCase,
+      width: 1670,
+      height: 941,
+      alt: 'Notebook exibindo a Hero da SignatuRe, com o “Re” em vinho sobre a transição orgânica entre fundo escuro e claro.',
+    },
   },
 ];

@@ -92,6 +92,39 @@ html[data-past-hero='false'] .header[data-variant='landing'] .header__brand {
     align-items: flex-end;
   }
 }
+.footer__social {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1rem, 2.4vw, 1.75rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer .footer__social a {
+  display: inline-flex;
+  padding: 0.35rem;
+  margin: -0.35rem;
+  background: none;
+  opacity: 0.78;
+  transition: color var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+.footer__social svg {
+  display: block;
+}
+@media (--hover) {
+  .footer .footer__social a:hover {
+    color: var(--accent);
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+.footer .footer__social a:focus-visible {
+  color: var(--accent);
+  opacity: 1;
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
 .footer__mark {
   display: block;
   margin-left: -0.04em;
