@@ -21,7 +21,7 @@ export default function Commercial() {
               Condições
             </Tone>
             <h1 id="c-title" className="c-title">
-              <SplitTone text="Conte pra gente" />
+              <SplitTone text="Escolha sua presença" />
             </h1>
           </div>
         </section>

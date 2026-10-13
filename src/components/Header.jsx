@@ -24,8 +24,8 @@ export default function Header({ variant = 'landing' }) {
         {landing ? (
           <>
             <Link to="/#o-que-fazemos">O que fazemos</Link>
-            <Link to="/#assinatura">Assinatura</Link>
-            <Link to="/contratar">Conte pra gente</Link>
+            <Link to="/#assinatura">Nosso trabalho</Link>
+            <Link to="/contratar">Escolha sua presença</Link>
           </>
         ) : (
           <Link to="/">Início</Link>

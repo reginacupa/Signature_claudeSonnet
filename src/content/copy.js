@@ -7,7 +7,7 @@ export const copy = {
     headline: 'Sua presença digital à altura do seu negócio.',
     tagline: "DON'T JUST SHOW UP. STAND OUT.",
     // PROVISÓRIO — CALIBRATE IN BROWSER (Master §11, §46). Não é decisão final.
-    cta: { label: 'Iniciar um projeto', to: '/contratar' },
+    cta: { label: 'Fale conosco', to: 'https://wa.me/5547984653443' },
   },
   perception: {
     lines: ['Antes de ser escolha,', 'você é', 'percepção.'],

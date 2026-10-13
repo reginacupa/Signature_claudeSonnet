@@ -98,7 +98,7 @@ export default function Signature() {
           {closing[1]}
         </Tone>
         <Tone className="signature__cta">
-          <Link to="/contratar" className="cta-bracket">
+          <a href="https://wa.me/5547984653443" target="_blank"rel="noopener noreferrer" className="cta-bracket">
             <span className="cta-bracket__b" aria-hidden="true">
               [
             </span>
@@ -106,7 +106,7 @@ export default function Signature() {
             <span className="cta-bracket__b cta-bracket__b--r" aria-hidden="true">
               ]
             </span>
-          </Link>
+          </a>
         </Tone>
       </div>
     </section>

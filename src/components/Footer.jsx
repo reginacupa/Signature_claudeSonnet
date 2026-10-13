@@ -67,8 +67,8 @@ export default function Footer() {
       <div className="footer__top">
         <Tone as="nav" aria-label="Rodapé" className="footer__nav">
           <Link to="/#o-que-fazemos">O que fazemos</Link>
-          <Link to="/#assinatura">Assinatura</Link>
-          <Link to="/contratar">Conte pra gente</Link>
+          <Link to="/#assinatura">Nosso trabalho</Link>
+          <Link to="/contratar">Escolha sua presença</Link>
         </Tone>
         <Tone as="ul" className="footer__social" aria-label="Redes e contato">
           {socials.map(({ label, href, external, icon, onClick }) => (
