@@ -82,7 +82,7 @@ export default function Signature() {
   return (
     <section id="assinatura" className="signature" aria-labelledby="signature-title">
       <Tone as="h2" id="signature-title" reveal className="signature__opening">
-        {opening[0]}
+        {opening[0]}{' '}
         <br />
         {opening[1]}
       </Tone>

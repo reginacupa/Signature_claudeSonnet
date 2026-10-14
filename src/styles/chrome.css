@@ -46,6 +46,118 @@ html[data-past-hero='false'] .header[data-variant='landing'] .header__brand {
   background-size: 100% 1px;
 }
 
+/* ── Header · menu hamburger (somente mobile; desktop intacto) ─── */
+.header__toggle {
+  display: none;
+}
+@media (--sm) {
+  .header {
+    background: var(--surface-dark);
+    --fg: var(--text-on-dark);
+    --fg-muted: var(--text-muted-on-dark);
+    border-bottom: 1px solid var(--hairline-on-dark);
+  }
+  /* A barra é sempre escura: a marca (letras com Tone próprio) fica fixa no tom escuro. */
+  .header [data-tone] {
+    --fg: var(--text-on-dark);
+    --fg-muted: var(--text-muted-on-dark);
+    --accent: var(--accent-on-dark);
+    --punct: var(--punct-on-dark);
+    --hairline: var(--hairline-on-dark);
+    color: var(--text-on-dark);
+    -webkit-text-fill-color: currentColor;
+    background-image: none !important;
+  }
+  .header__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin: 0 -0.75rem 0 auto;
+    padding: 0;
+    background: none;
+    border: 0;
+    color: var(--text-on-dark);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .header__toggle:focus-visible {
+    outline: 2px solid var(--text-on-dark);
+    outline-offset: -4px;
+  }
+  .header__bars,
+  .header__bars::before {
+    display: block;
+    width: 1.4rem;
+    height: 1px;
+    background: currentColor;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+  .header__bars {
+    position: relative;
+    transform: translateY(-0.2rem);
+  }
+  .header__bars::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(0.4rem);
+  }
+  .header[data-menu='open'] .header__bars {
+    transform: rotate(45deg);
+  }
+  .header[data-menu='open'] .header__bars::before {
+    transform: rotate(-90deg);
+  }
+  .header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.75rem var(--margin) 1.75rem;
+    flex-direction: column;
+    gap: 0;
+    background: var(--surface-dark);
+    color: var(--text-on-dark);
+    border-bottom: 1px solid var(--hairline-on-dark);
+    font-size: var(--fs-small);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition:
+      opacity var(--dur-base) var(--ease-out),
+      transform var(--dur-base) var(--ease-out),
+      visibility 0s linear var(--dur-base);
+  }
+  .header[data-menu='open'] .header__nav {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s;
+  }
+  .header__nav a {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--hairline-on-dark);
+    background: none;
+  }
+  .header__nav a:last-child {
+    border-bottom: 0;
+  }
+  .header__nav a:focus-visible {
+    outline: 2px solid var(--text-on-dark);
+    outline-offset: -2px;
+  }
+}
+@media (--sm) and (--reduce) {
+  .header__bars,
+  .header__bars::before,
+  .header__nav {
+    transition: none;
+  }
+}
 /* ── Footer ────────────────────────────────────────────────────── */
 .footer {
   position: relative;

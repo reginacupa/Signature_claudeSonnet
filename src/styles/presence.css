@@ -32,3 +32,9 @@
     max-width: 13ch;
   }
 }
+/* Mobile: respiro de entrada menor (o vazio após PERCEPÇÃO era excessivo). */
+@media (--sm) {
+  .presence {
+    padding-top: clamp(4rem, 12vh, 8rem);
+  }
+}

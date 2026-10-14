@@ -44,3 +44,11 @@
     margin-left: 12vw;
   }
 }
+/* Mobile: palco mais curto, ainda centralizado na tela enquanto fixo
+   (reduz o vazio antes e depois de PERCEPÇÃO sem alterar a extensão do trecho fixo). */
+@media (--sm) {
+  .perception__stage {
+    top: 20svh;
+    height: 60svh;
+  }
+}
